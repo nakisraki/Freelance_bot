@@ -5,10 +5,5 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 Werkzeug==0.15.6
-streamlit==0.69.0
-pandas==0.23.0
-matplotlib==3.3.3
-seaborn==0.11.1
-numpy==1.19.5
-yfinance==0.1.55
+
 
