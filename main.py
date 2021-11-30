@@ -21,7 +21,25 @@ async def m (sleeping):
 
     while True:
 
-       print(a)
+           new_KWORKS = parser.KWORK(['11'])
+           new_FL = parser.FL(["razrabotka-sajtov","programmirovanie"])
+           new_cards = {**new_KWORKS,**new_FL}
+           print(str(len(new_cards)) + " New at all")
+           for option in new_cards:
+                head = option
+                address , describe , price , photo = new_cards[option][0],new_cards[option][1],new_cards[option][2],open(new_cards[option][3],"rb")
+                await bot.send_photo(920120916,photo,option)
+                photo.close()
+                await bot.send_message(920120916,describe + "\n" + price,reply_markup=button_url(address))
+                except_rem = ['Image/15s.png','Image/no.png', 'Image/16s.png' , 'Image/14s.png' , 'Image/17s.png' , 'Image/19s.png' , 'Image/18s.png' , 'Image/13s.png' , 'Image/12s.png']
+                if new_cards[option][3] not in except_rem:
+                     try:
+                        rem_file = pathlib.Path(new_KWORKS[option][3])
+                        rem_file.unlink()
+                     except:
+                        pass
+                await asyncio.sleep(20)
+           await asyncio.sleep(sleeping)
     print("Code error")
     return  m()
 
